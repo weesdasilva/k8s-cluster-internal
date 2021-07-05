@@ -1,0 +1,124 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "creationTimestamp": "2021-01-12T15:27:25Z",
+        "deletionTimestamp": "2021-01-29T20:06:36Z",
+        "managedFields": [
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:status": {
+                        "f:phase": {}
+                    }
+                },
+                "manager": "kubectl-create",
+                "operation": "Update",
+                "time": "2021-01-12T15:27:25Z"
+            },
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:status": {
+                        "f:conditions": {
+                            ".": {},
+                            "k:{\"type\":\"NamespaceContentRemaining\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            },
+                            "k:{\"type\":\"NamespaceDeletionContentFailure\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            },
+                            "k:{\"type\":\"NamespaceDeletionDiscoveryFailure\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            },
+                            "k:{\"type\":\"NamespaceDeletionGroupVersionParsingFailure\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            },
+                            "k:{\"type\":\"NamespaceFinalizersRemaining\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            }
+                        }
+                    }
+                },
+                "manager": "kube-controller-manager",
+                "operation": "Update",
+                "time": "2021-01-29T20:06:42Z"
+            }
+        ],
+        "name": "monitoring",
+        "resourceVersion": "444107",
+        "uid": "68dcac31-f462-436d-83a4-872504ba1539"
+    },
+    "spec": {
+        "finalizers": [
+            "kubernetes"
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastTransitionTime": "2021-01-29T20:06:41Z",
+                "message": "Discovery failed for some groups, 1 failing: unable to retrieve the complete list of server APIs: metrics.k8s.io/v1beta1: the server is currently unable to handle the request",
+                "reason": "DiscoveryFailed",
+                "status": "True",
+                "type": "NamespaceDeletionDiscoveryFailure"
+            },
+            {
+                "lastTransitionTime": "2021-01-29T20:06:42Z",
+                "message": "All legacy kube types successfully parsed",
+                "reason": "ParsedGroupVersions",
+                "status": "False",
+                "type": "NamespaceDeletionGroupVersionParsingFailure"
+            },
+            {
+                "lastTransitionTime": "2021-01-29T20:08:48Z",
+                "message": "All content successfully deleted, may be waiting on finalization",
+                "reason": "ContentDeleted",
+                "status": "False",
+                "type": "NamespaceDeletionContentFailure"
+            },
+            {
+                "lastTransitionTime": "2021-01-29T20:08:48Z",
+                "message": "All content successfully removed",
+                "reason": "ContentRemoved",
+                "status": "False",
+                "type": "NamespaceContentRemaining"
+            },
+            {
+                "lastTransitionTime": "2021-01-29T20:06:42Z",
+                "message": "All content-preserving finalizers finished",
+                "reason": "ContentHasNoFinalizers",
+                "status": "False",
+                "type": "NamespaceFinalizersRemaining"
+            }
+        ],
+        "phase": "Terminating"
+    }
+}
